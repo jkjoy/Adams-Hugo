@@ -4,8 +4,9 @@ title = "Adams"
 theme = "adams"
 
 # 分页设置
-paginate = 4
-paginatePath = "page"
+[pagination]
+  pagerSize = 4
+  path = "page"
 
 # 主要内容类型
 [params]
