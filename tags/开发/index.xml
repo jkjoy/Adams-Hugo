@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>开发 on Adams</title><link>https://example.com/tags/%E5%BC%80%E5%8F%91/</link><description>Recent content in 开发 on Adams</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 08 Jan 2024 16:45:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/%E5%BC%80%E5%8F%91/index.xml" rel="self" type="application/rss+xml"/><item><title>前端开发常用工具推荐</title><link>https://example.com/posts/frontend-tools/</link><pubDate>Mon, 08 Jan 2024 16:45:00 +0800</pubDate><guid>https://example.com/posts/frontend-tools/</guid><description>&lt;p&gt;作为前端开发者，选择合适的工具可以大大提高开发效率。这里推荐一些我常用的工具。&lt;/p&gt;
+&lt;h2 id="编辑器"&gt;编辑器&lt;/h2&gt;
+&lt;h3 id="vs-code"&gt;VS Code&lt;/h3&gt;
+&lt;p&gt;微软出品的免费编辑器，插件生态丰富，性能优秀。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;推荐插件：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ESLint - 代码检查&lt;/li&gt;
+&lt;li&gt;Prettier - 代码格式化&lt;/li&gt;
+&lt;li&gt;Auto Rename Tag - 自动重命名标签&lt;/li&gt;
+&lt;li&gt;Live Server - 本地开发服务器&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>

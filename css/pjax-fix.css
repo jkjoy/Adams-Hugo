@@ -1,0 +1,45 @@
+/* PJAX 页面切换优化 - 防止白屏闪烁 */
+
+/* 为body添加平滑过渡效果 */
+body {
+    transition: background-color 0.2s ease-in-out;
+}
+
+/* 夜间模式和护眼模式的快速切换 */
+body.night,
+body.sepia {
+    transition: background-color 0.15s ease-in-out;
+}
+
+/* InstantClick 页面加载进度条（可选）*/
+#instantclick {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: transparent;
+    z-index: 10000;
+}
+
+#instantclick-bar {
+    background: #3274ff;
+    width: 0;
+    height: 3px;
+    transition: width 0.3s;
+}
+
+/* 页面切换时的淡入效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0.95;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* PJAX 加载时防止闪烁 */
+.instantclick-loading body {
+    animation: none;
+}

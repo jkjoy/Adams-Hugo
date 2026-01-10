@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>生活 on Adams</title><link>https://example.com/tags/%E7%94%9F%E6%B4%BB/</link><description>Recent content in 生活 on Adams</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 31 Dec 2023 23:00:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/%E7%94%9F%E6%B4%BB/index.xml" rel="self" type="application/rss+xml"/><item><title>我的 2023 年度总结</title><link>https://example.com/posts/2023-summary/</link><pubDate>Sun, 31 Dec 2023 23:00:00 +0800</pubDate><guid>https://example.com/posts/2023-summary/</guid><description>&lt;p&gt;2023 年即将结束，回顾这一年的成长与收获。&lt;/p&gt;
+&lt;h2 id="技术成长"&gt;技术成长&lt;/h2&gt;
+&lt;p&gt;今年学习了很多新技术：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;深入学习了 Vue 3 和 Composition API&lt;/li&gt;
+&lt;li&gt;尝试了 Rust 语言&lt;/li&gt;
+&lt;li&gt;搭建了自己的博客系统&lt;/li&gt;
+&lt;li&gt;参与了多个开源项目&lt;/li&gt;
+&lt;/ul&gt;</description></item></channel></rss>
