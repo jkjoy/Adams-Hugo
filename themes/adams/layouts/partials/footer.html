@@ -1,0 +1,304 @@
+<footer class="footer">
+    <section class="container">
+        {{- if .Site.Menus.footer }}
+        <nav class="menu">
+            <ul>
+                {{- range .Site.Menus.footer }}
+                <li><i class="{{ .Pre }}"></i><a href="{{ .URL }}">{{ .Name }}</a></li>
+                {{- end }}
+            </ul>
+        </nav>
+        {{- end }}
+        <div style="display: flex;justify-content: space-between;">
+            <div class='left'>
+                <span>&copy; {{ now.Format "2006" }} <a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></span>
+                {{- if .Site.Params.icp }}
+                <span> . <a href="https://beian.miit.gov.cn" target="_blank" rel="noopener">{{ .Site.Params.icp }}</a></span>
+                {{- end }}
+            </div>
+            <div class='right'>
+                <span>Theme by <a href="https://biji.io" target="_blank" rel="noopener">Adams</a></span>
+            </div>
+        </div>
+    </section>
+</footer>
+
+<div class="setting_tool iconfont">
+    <a class="back2top" style="display:none;"><i class="czs-arrow-up-l"></i></a>
+    {{- if not .IsHome }}
+    <a class="home" href="{{ .Site.BaseURL }}"><i class="czs-home-l"></i></a>
+    {{- end }}
+    <a class="socolor"><i class="czs-clothes-l"></i></a>
+    <div class="c">
+        <ul>
+            <li class="color undefined">默认</li>
+            <li class="color sepia">护眼</li>
+            <li class="color night">夜晚</li>
+            <li class="hr"></li>
+            <li class="font serif">Serif</li>
+            <li class="font sans">Sans</li>
+        </ul>
+    </div>
+</div>
+
+<script src="{{ "js/jquery.min.js" | relURL }}" data-no-instant></script>
+<script src="{{ "js/qrcode.min.js" | relURL }}" data-no-instant></script>
+<script src="{{ "js/script.js" | relURL }}" data-no-instant></script>
+{{- if not .Site.Params.disablePrettify }}
+<script src="{{ "js/prettify.js" | relURL }}" data-no-instant></script>
+{{- end }}
+{{- if not .Site.Params.disablePjax }}
+<script src="{{ "js/instantclick.min.js" | relURL }}" data-no-instant></script>
+{{- end }}
+
+<script data-no-instant>
+    (function ($) {
+        // 应用保存的主题样式
+        function applyThemeStyles() {
+            var colorStyle = localStorage.adams_color_style || "";
+            var fontStyle = localStorage.adams_font_style || "";
+            document.body.className = (colorStyle + " " + fontStyle).trim();
+        }
+
+        {{- if not .Site.Params.disablePjax }}
+        // 检查 InstantClick 是否成功加载
+        if (typeof InstantClick !== 'undefined') {
+            // PJAX页面即将切换时就应用主题，避免白屏
+            InstantClick.on('receive', function(url, body, title) {
+                // 在新页面内容接收后立即应用主题样式
+                applyThemeStyles();
+            });
+
+            InstantClick.on('change', function (isInitialLoad) {
+                // 页面切换完成后再次确保主题正确
+                applyThemeStyles();
+
+                // 关闭打开的菜单
+                $('.setting_tool').removeClass('colors');
+
+                $.adamsOverload();
+                if (isInitialLoad === false) {
+                    if (typeof MathJax !== 'undefined') MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
+                    if (typeof prettyPrint !== 'undefined') prettyPrint();
+                    {{- if .Site.Params.comments }}
+                    if (typeof initComments !== 'undefined') initComments();
+                    {{- end }}
+                }
+                {{- if not .Site.Params.placard }}
+                if ($('.placard').length) {
+                    fetch("https://v1.hitokoto.cn?encode=text")
+                        .then(response => response.text())
+                        .then(text => $('.placard').text(text));
+                }
+                {{- end }}
+            });
+            InstantClick.init('mousedown');
+        } else {
+            // InstantClick 加载失败，使用普通模式
+            console.warn('InstantClick failed to load, falling back to normal mode');
+            $.adamsOverload();
+        }
+        {{- else }}
+        $.adamsOverload();
+        {{- end }}
+    })(jQuery);
+</script>
+
+<!-- QR Code Generation -->
+<script data-no-instant>
+(function() {
+    var qrcodeObj = null;
+
+    function initQRCode() {
+        var shareLink = document.querySelector('.infos .share a[data-url]');
+        if (!shareLink) return;
+
+        var url = shareLink.getAttribute('data-url');
+        var container = document.getElementById('qrcode-container');
+
+        if (!container || !url) return;
+
+        // 清空容器
+        container.innerHTML = '';
+
+        // 生成二维码
+        if (typeof QRCode !== 'undefined') {
+            qrcodeObj = new QRCode(container, {
+                text: url,
+                width: 130,
+                height: 130,
+                colorDark: '#000000',
+                colorLight: '#ffffff',
+                correctLevel: QRCode.CorrectLevel.H
+            });
+        }
+    }
+
+    // 页面加载时初始化
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initQRCode);
+    } else {
+        initQRCode();
+    }
+
+    {{- if not .Site.Params.disablePjax }}
+    // PJAX 切换后重新初始化
+    if (typeof InstantClick !== 'undefined') {
+        InstantClick.on('change', function() {
+            qrcodeObj = null;
+            initQRCode();
+        });
+    }
+    {{- end }}
+})();
+</script>
+
+{{- if .Site.Params.comments }}
+{{- $commentSystem := .Site.Params.comments.system | default "none" }}
+{{- if eq $commentSystem "twikoo" }}
+<!-- Twikoo 评论数加载 -->
+<script data-no-instant>
+(function() {
+    function loadTwikooCommentCounts() {
+        // 收集所有需要获取评论数的路径
+        var countElements = document.querySelectorAll('.twikoo-comment-count');
+        if (countElements.length === 0) return;
+
+        var urls = [];
+        var pathMap = {};
+        countElements.forEach(function(el) {
+            var path = el.getAttribute('data-path');
+            if (path && !pathMap[path]) {
+                urls.push(path);
+                pathMap[path] = [];
+            }
+            if (path) {
+                pathMap[path].push(el);
+            }
+        });
+
+        if (urls.length === 0) return;
+
+        // 确保 twikoo 已加载
+        function fetchCommentCounts() {
+            if (typeof twikoo === 'undefined') {
+                // 加载 Twikoo 脚本
+                var script = document.createElement('script');
+                script.src = 'https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js';
+                script.onload = function() {
+                    getCommentCounts();
+                };
+                document.body.appendChild(script);
+            } else {
+                getCommentCounts();
+            }
+        }
+
+        function getCommentCounts() {
+            twikoo.getCommentsCount({
+                envId: '{{ .Site.Params.comments.twikoo.envId }}',
+                {{- if .Site.Params.comments.twikoo.region }}
+                region: '{{ .Site.Params.comments.twikoo.region }}',
+                {{- end }}
+                urls: urls,
+                includeReply: false
+            }).then(function(res) {
+                // res 是一个数组，每个元素包含 url 和 count
+                res.forEach(function(item) {
+                    var path = item.url;
+                    var count = item.count || 0;
+                    if (pathMap[path]) {
+                        pathMap[path].forEach(function(el) {
+                            el.textContent = count;
+                        });
+                    }
+                });
+            }).catch(function(err) {
+                // 静默失败，不在控制台显示错误
+                // 如果需要调试，可以取消下面的注释
+                // console.warn('Twikoo comment counts unavailable:', err.message || err);
+
+                // 保持显示为 0
+                Object.keys(pathMap).forEach(function(path) {
+                    pathMap[path].forEach(function(el) {
+                        el.textContent = '0';
+                    });
+                });
+            });
+        }
+
+        fetchCommentCounts();
+    }
+
+    // 页面加载时执行
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadTwikooCommentCounts);
+    } else {
+        loadTwikooCommentCounts();
+    }
+    {{- if not .Site.Params.disablePjax }}
+
+    // PJAX 切换后重新加载
+    if (typeof InstantClick !== 'undefined') {
+        InstantClick.on('change', function() {
+            loadTwikooCommentCounts();
+        });
+    }
+    {{- end }}
+})();
+</script>
+{{- else if eq $commentSystem "artalk" }}
+<!-- Artalk 评论数加载 -->
+<script data-no-instant>
+(function() {
+    function loadArtalkCommentCounts() {
+        var countElements = document.querySelectorAll('.artalk-comment-count');
+        if (countElements.length === 0) return;
+
+        // 确保 Artalk 已加载
+        if (typeof Artalk === 'undefined') {
+            var linkCSS = document.createElement('link');
+            linkCSS.rel = 'stylesheet';
+            linkCSS.href = 'https://cdn.staticfile.org/artalk/2.5.5/Artalk.css';
+            document.head.appendChild(linkCSS);
+
+            var script = document.createElement('script');
+            script.src = 'https://cdn.staticfile.org/artalk/2.5.5/Artalk.js';
+            script.onload = function() {
+                initArtalkCount();
+            };
+            document.body.appendChild(script);
+        } else {
+            initArtalkCount();
+        }
+
+        function initArtalkCount() {
+            // Artalk 会自动处理 .artalk-comment-count 元素
+            Artalk.loadCountWidget({
+                server: '{{ .Site.Params.comments.artalk.server }}',
+                site: '{{ .Site.Params.comments.artalk.site | default .Site.Title }}',
+            });
+        }
+    }
+
+    // 页面加载时执行
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', loadArtalkCommentCounts);
+    } else {
+        loadArtalkCommentCounts();
+    }
+    {{- if not .Site.Params.disablePjax }}
+
+    // PJAX 切换后重新加载
+    if (typeof InstantClick !== 'undefined') {
+        InstantClick.on('change', function() {
+            loadArtalkCommentCounts();
+        });
+    }
+    {{- end }}
+})();
+</script>
+{{- end }}
+{{- end }}
+
+{{ partial "footer-extra.html" . }}

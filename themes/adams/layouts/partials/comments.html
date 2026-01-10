@@ -1,0 +1,167 @@
+{{- /* 只在文章页面显示评论，排除特殊页面 */ -}}
+{{- $excludeLayouts := slice "archives" "tags" "links" }}
+{{- $showComments := and (not .Params.disableComments) (.Site.Params.comments) (not (in $excludeLayouts .Layout)) }}
+
+{{- if $showComments }}
+{{- if or (.IsPage) (and (not .IsHome) (not .IsSection)) }}
+<!-- Comments -->
+<section class="comments">
+    <div class="container" data-no-instant>
+        <div id="comments" class="comments-area"></div>
+    </div>
+</section>
+
+<script>
+function initComments() {
+    {{- $commentSystem := .Site.Params.comments.system | default "none" }}
+
+    {{- if eq $commentSystem "twikoo" }}
+    // Twikoo 评论系统
+    if (typeof twikoo !== 'undefined') {
+        twikoo.init({
+            envId: '{{ .Site.Params.comments.twikoo.envId }}',
+            el: '#comments',
+            {{- if .Site.Params.comments.twikoo.region }}
+            region: '{{ .Site.Params.comments.twikoo.region }}',
+            {{- end }}
+            {{- if .Site.Params.comments.twikoo.path }}
+            path: '{{ .Site.Params.comments.twikoo.path }}',
+            {{- else }}
+            path: window.location.pathname,
+            {{- end }}
+            lang: '{{ .Site.Params.comments.twikoo.lang | default "zh-CN" }}'
+        });
+    } else {
+        const script = document.createElement('script');
+        script.src = 'https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js';
+        script.onload = function() {
+            twikoo.init({
+                envId: '{{ .Site.Params.comments.twikoo.envId }}',
+                el: '#comments',
+                {{- if .Site.Params.comments.twikoo.region }}
+                region: '{{ .Site.Params.comments.twikoo.region }}',
+                {{- end }}
+                {{- if .Site.Params.comments.twikoo.path }}
+                path: '{{ .Site.Params.comments.twikoo.path }}',
+                {{- else }}
+                path: window.location.pathname,
+                {{- end }}
+                lang: '{{ .Site.Params.comments.twikoo.lang | default "zh-CN" }}'
+            });
+        };
+        document.body.appendChild(script);
+    }
+
+    {{- else if eq $commentSystem "artalk" }}
+    // Artalk 评论系统
+    if (typeof Artalk !== 'undefined') {
+        new Artalk({
+            el: '#comments',
+            pageKey: window.location.pathname,
+            pageTitle: '{{ .Title }}',
+            server: '{{ .Site.Params.comments.artalk.server }}',
+            site: '{{ .Site.Params.comments.artalk.site | default .Site.Title }}',
+            {{- if .Site.Params.comments.artalk.placeholder }}
+            placeholder: '{{ .Site.Params.comments.artalk.placeholder }}',
+            {{- end }}
+            {{- if .Site.Params.comments.artalk.noComment }}
+            noComment: '{{ .Site.Params.comments.artalk.noComment }}',
+            {{- end }}
+            {{- if .Site.Params.comments.artalk.sendBtn }}
+            sendBtn: '{{ .Site.Params.comments.artalk.sendBtn }}',
+            {{- end }}
+            {{- if .Site.Params.comments.artalk.darkMode }}
+            darkMode: {{ .Site.Params.comments.artalk.darkMode }},
+            {{- end }}
+        });
+    } else {
+        const linkCSS = document.createElement('link');
+        linkCSS.rel = 'stylesheet';
+        linkCSS.href = 'https://cdn.staticfile.org/artalk/2.5.5/Artalk.css';
+        document.head.appendChild(linkCSS);
+
+        const script = document.createElement('script');
+        script.src = 'https://cdn.staticfile.org/artalk/2.5.5/Artalk.js';
+        script.onload = function() {
+            new Artalk({
+                el: '#comments',
+                pageKey: window.location.pathname,
+                pageTitle: '{{ .Title }}',
+                server: '{{ .Site.Params.comments.artalk.server }}',
+                site: '{{ .Site.Params.comments.artalk.site | default .Site.Title }}',
+                {{- if .Site.Params.comments.artalk.placeholder }}
+                placeholder: '{{ .Site.Params.comments.artalk.placeholder }}',
+                {{- end }}
+                {{- if .Site.Params.comments.artalk.noComment }}
+                noComment: '{{ .Site.Params.comments.artalk.noComment }}',
+                {{- end }}
+                {{- if .Site.Params.comments.artalk.sendBtn }}
+                sendBtn: '{{ .Site.Params.comments.artalk.sendBtn }}',
+                {{- end }}
+                {{- if .Site.Params.comments.artalk.darkMode }}
+                darkMode: {{ .Site.Params.comments.artalk.darkMode }},
+                {{- end }}
+            });
+        };
+        document.body.appendChild(script);
+    }
+
+    {{- else if eq $commentSystem "gitalk" }}
+    // Gitalk 评论系统
+    if (typeof Gitalk !== 'undefined') {
+        const gitalk = new Gitalk({
+            clientID: '{{ .Site.Params.comments.gitalk.clientID }}',
+            clientSecret: '{{ .Site.Params.comments.gitalk.clientSecret }}',
+            repo: '{{ .Site.Params.comments.gitalk.repo }}',
+            owner: '{{ .Site.Params.comments.gitalk.owner }}',
+            admin: [{{ range .Site.Params.comments.gitalk.admin }}'{{ . }}',{{ end }}],
+            id: location.pathname,
+            distractionFreeMode: {{ .Site.Params.comments.gitalk.distractionFreeMode | default "false" }},
+            {{- if .Site.Params.comments.gitalk.proxy }}
+            proxy: '{{ .Site.Params.comments.gitalk.proxy }}',
+            {{- end }}
+            {{- if .Site.Params.comments.gitalk.language }}
+            language: '{{ .Site.Params.comments.gitalk.language }}',
+            {{- end }}
+        });
+        gitalk.render('comments');
+    } else {
+        const linkCSS = document.createElement('link');
+        linkCSS.rel = 'stylesheet';
+        linkCSS.href = 'https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.css';
+        document.head.appendChild(linkCSS);
+
+        const script = document.createElement('script');
+        script.src = 'https://cdn.staticfile.org/gitalk/1.8.0/gitalk.min.js';
+        script.onload = function() {
+            const gitalk = new Gitalk({
+                clientID: '{{ .Site.Params.comments.gitalk.clientID }}',
+                clientSecret: '{{ .Site.Params.comments.gitalk.clientSecret }}',
+                repo: '{{ .Site.Params.comments.gitalk.repo }}',
+                owner: '{{ .Site.Params.comments.gitalk.owner }}',
+                admin: [{{ range .Site.Params.comments.gitalk.admin }}'{{ . }}',{{ end }}],
+                id: location.pathname,
+                distractionFreeMode: {{ .Site.Params.comments.gitalk.distractionFreeMode | default "false" }},
+                {{- if .Site.Params.comments.gitalk.proxy }}
+                proxy: '{{ .Site.Params.comments.gitalk.proxy }}',
+                {{- end }}
+                {{- if .Site.Params.comments.gitalk.language }}
+                language: '{{ .Site.Params.comments.gitalk.language }}',
+                {{- end }}
+            });
+            gitalk.render('comments');
+        };
+        document.body.appendChild(script);
+    }
+    {{- end }}
+}
+
+// 初始化评论
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initComments);
+} else {
+    initComments();
+}
+</script>
+{{- end }}
+{{- end }}

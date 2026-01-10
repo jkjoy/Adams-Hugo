@@ -1,0 +1,160 @@
+baseURL = "https://example.com/"
+languageCode = "zh-CN"
+title = "Adams"
+theme = "adams"
+
+# 分页设置
+paginate = 4
+paginatePath = "page"
+
+# 主要内容类型
+[params]
+  description = "Simple is beautiful"
+  keywords = ["博客", "Adams", "Hugo"]
+  mainSections = ["posts"]
+
+  # 显示缩略图
+  showThumbnail = true
+
+  # 公告栏文字（留空则使用一言API）
+  placard = ""
+
+  # 自动切换主题模式（根据系统偏好）
+  autoMode = false
+
+  # 禁用代码高亮
+  disablePrettify = false
+
+  # 禁用PJAX
+  disablePjax = false
+
+  # ICP备案号
+  icp = ""
+
+  # 打赏二维码
+  wechatpay = ""  # 微信打赏二维码URL
+  alipay = ""     # 支付宝打赏二维码URL
+
+  # 文章底部广告HTML
+  postAd = ""
+
+  # 评论系统配置
+  [params.comments]
+    # 选择评论系统: twikoo, artalk, gitalk 或留空不使用
+    system = "twikoo"
+
+    # Twikoo 配置
+    [params.comments.twikoo]
+      envId = "https://t.memos.ee"  # Twikoo 环境ID或URL
+      region = ""                        # 环境地域，默认为 ap-shanghai
+      path = ""                          # 用于区分不同文章的 path，默认为 window.location.pathname
+      lang = "zh-CN"                     # 语言，支持 zh-CN, zh-TW, en
+
+    # Artalk 配置
+    [params.comments.artalk]
+      server = "https://your-artalk-server"  # Artalk 服务器地址
+      site = ""                              # 站点名称，默认使用网站标题
+      placeholder = "来都来了，说点什么..."    # 评论框占位文字
+      noComment = "快来成为第一个评论的人吧~"  # 无评论时的提示
+      sendBtn = "发送"                       # 发送按钮文字
+      darkMode = false                       # 暗黑模式
+
+    # Gitalk 配置
+    [params.comments.gitalk]
+      clientID = "your-github-client-id"        # GitHub Application Client ID
+      clientSecret = "your-github-client-secret" # GitHub Application Client Secret
+      repo = "your-repo"                         # 存储评论的仓库名
+      owner = "your-github-username"             # 仓库所有者
+      admin = ["your-github-username"]           # 管理员用户名数组
+      distractionFreeMode = false                # 无干扰模式
+      proxy = ""                                 # GitHub 登录代理
+      language = "zh-CN"                         # 语言
+
+# 菜单配置
+[[menu.main]]
+  name = "首页"
+  url = "/"
+  weight = 1
+  pre = ""
+
+[[menu.main]]
+  name = "归档"
+  url = "/archives/"
+  weight = 2
+  pre = ""
+
+[[menu.main]]
+  name = "标签"
+  url = "/tags/"
+  weight = 3
+  pre = ""
+
+[[menu.main]]
+  name = "友链"
+  url = "/links/"
+  weight = 4
+  pre = ""
+
+[[menu.main]]
+  name = "关于"
+  url = "/pages/about/"
+  weight = 5
+  pre = ""
+
+# 社交链接
+[[menu.social]]
+  name = "GitHub"
+  url = "https://github.com/jkjoy"
+  weight = 2
+  pre = "czs-github-logo"
+
+[[menu.social]]
+  name = "Moments"
+  url = "https://jiong.us/@sun"
+  weight = 3
+  pre = "czs-moments"
+
+[[menu.social]]
+  name = "telegram"
+  url = "https://t.me/imsunpw"
+  weight = 3
+  pre = "czs-telegram"
+
+[[menu.social]]
+  name = "RSS"
+  url = "/index.xml"
+  weight = 1
+  pre = "czs-rss"
+
+# 页脚菜单
+[[menu.footer]]
+  name = "RSS"
+  url = "/index.xml"
+  weight = 1
+  pre = "czs-rss"
+
+[[menu.footer]]
+  name = "Mail"
+  url = "mailto:s@zxd.im"
+  weight = 1
+  pre = "czs-message"
+
+# Markup 设置
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+    noClasses = false
+
+# 输出格式
+[outputs]
+  home = ["HTML", "RSS"]
+  section = ["HTML", "RSS"]
+
+# Taxonomies
+[taxonomies]
+  tag = "tags"
+  category = "categories"

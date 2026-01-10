@@ -1,0 +1,75 @@
+{{ define "main" }}
+<!-- Post List -->
+<section class="posts main-load">
+    <div class="container">
+        <div class="post-list">
+            {{- $paginator := .Paginate .Pages }}
+            {{- if gt (len $paginator.Pages) 0 }}
+                {{- range $paginator.Pages }}
+                <article class="meta" itemscope itemtype="http://schema.org/BlogPosting">
+                    <header>
+                        <a href="{{ .RelPermalink }}" itemprop="url">
+                            <h2 itemprop="name headline">{{ .Title }}</h2>
+                        </a>
+                    </header>
+                    <main>
+                        {{- if .Site.Params.showThumbnail }}
+                            {{- $thumbnail := partial "get-thumbnail.html" . -}}
+                            {{- if $thumbnail }}
+                        <a href="{{ .RelPermalink }}" class="thumb"
+                           style="background-image: url('{{ $thumbnail }}');"></a>
+                            {{- end }}
+                        {{- end }}
+                        <p itemprop="articleBody">
+                            {{- if .Summary }}
+                                {{ .Summary | plainify | truncate 220 }}
+                            {{- else }}
+                                {{ .Content | plainify | truncate 220 }}
+                            {{- end }}
+                        </p>
+                    </main>
+                    <footer>
+                        <span class="time">
+                            <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"
+                                  title="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}"
+                                  itemprop="datePublished" pubdate>{{ .Date.Format "2006-01-02" }}</time>发布
+                        </span>
+                        <span class="hr"></span>
+                        <span class="comments">
+                            {{ partial "comment-count.html" . }} 条评论
+                        </span>
+                    </footer>
+                </article>
+                {{- end }}
+            {{- else }}
+                <article class="meta">
+                    <h3 style="font-size: 3em;margin: 0 0 20px;color: #000;">Sorry!</h3>
+                    <p>这个页面没有你要找的内容。</p>
+                </article>
+            {{- end }}
+
+            {{- if gt $paginator.TotalPages 1 }}
+            <nav class="reade_more">
+                <div class="page-numbers">
+                    {{- if $paginator.HasPrev }}
+                    <a href="{{ $paginator.Prev.URL }}" class="page-numbers">«</a>
+                    {{- end }}
+
+                    {{- range $paginator.Pagers }}
+                        {{- if eq . $paginator }}
+                        <span class="page-numbers current">{{ .PageNumber }}</span>
+                        {{- else }}
+                        <a href="{{ .URL }}" class="page-numbers">{{ .PageNumber }}</a>
+                        {{- end }}
+                    {{- end }}
+
+                    {{- if $paginator.HasNext }}
+                    <a href="{{ $paginator.Next.URL }}" class="page-numbers">»</a>
+                    {{- end }}
+                </div>
+            </nav>
+            {{- end }}
+        </div>
+    </div>
+</section>
+{{ end }}

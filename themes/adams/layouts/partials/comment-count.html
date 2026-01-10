@@ -1,0 +1,15 @@
+{{- /* 评论数显示组件 */ -}}
+{{- if .Site.Params.comments -}}
+    {{- $commentSystem := .Site.Params.comments.system | default "none" -}}
+    {{- if eq $commentSystem "twikoo" -}}
+        <span class="twikoo-comment-count" data-path="{{ .RelPermalink }}">0</span>
+    {{- else if eq $commentSystem "artalk" -}}
+        <span class="artalk-comment-count" data-page-key="{{ .RelPermalink }}"></span>
+    {{- else if eq $commentSystem "gitalk" -}}
+        <span class="comment-count" data-path="{{ .RelPermalink }}">0</span>
+    {{- else -}}
+        <span class="comment-count" data-path="{{ .RelPermalink }}">0</span>
+    {{- end -}}
+{{- else -}}
+    0
+{{- end -}}
