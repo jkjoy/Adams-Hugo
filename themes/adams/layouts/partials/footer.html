@@ -93,7 +93,12 @@
                     if (typeof MathJax !== 'undefined') MathJax.Hub.Queue(["Typeset", MathJax.Hub]);
                     if (typeof prettyPrint !== 'undefined') prettyPrint();
                     {{- if .Site.Params.comments }}
-                    if (typeof initComments !== 'undefined') initComments();
+                    // 延迟初始化评论，确保 DOM 已完全加载
+                    if (typeof initComments !== 'undefined') {
+                        setTimeout(function() {
+                            initComments();
+                        }, 100);
+                    }
                     {{- end }}
                 }
                 {{- if not .Site.Params.placard }}

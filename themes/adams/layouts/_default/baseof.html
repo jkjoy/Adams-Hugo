@@ -23,6 +23,10 @@
     <link href="{{ "css/pjax-fix.css" | relURL }}" type="text/css" rel="stylesheet">
     {{- end }}
 
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="{{ "favicon.svg" | relURL }}">
+    <link rel="alternate icon" type="image/x-icon" href="{{ "favicon.ico" | relURL }}">
+
     {{- if hugo.IsProduction }}
     {{- template "_internal/google_analytics.html" . }}
     {{- end }}

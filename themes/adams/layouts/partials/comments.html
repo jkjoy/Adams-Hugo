@@ -54,6 +54,12 @@ function initComments() {
 
     {{- else if eq $commentSystem "artalk" }}
     // Artalk 评论系统
+    // 检查评论容器是否存在
+    if (!document.querySelector('#comments')) {
+        console.warn('Artalk: #comments element not found, skipping initialization');
+        return;
+    }
+
     if (typeof Artalk !== 'undefined') {
         Artalk.init({
             el: '#comments',
@@ -83,6 +89,11 @@ function initComments() {
         const script = document.createElement('script');
         script.src = '{{ .Site.Params.comments.artalk.server }}/dist/Artalk.js';
         script.onload = function() {
+            // 再次检查元素是否存在
+            if (!document.querySelector('#comments')) {
+                console.warn('Artalk: #comments element not found after script load');
+                return;
+            }
             Artalk.init({
                 el: '#comments',
                 pageKey: window.location.pathname,
