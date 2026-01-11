@@ -60,6 +60,18 @@
             document.body.className = (colorStyle + " " + fontStyle).trim();
         }
 
+        {{- if not .Site.Params.placard }}
+        // 加载一言API
+        function loadHitokoto() {
+            if ($('.placard').length) {
+                fetch("https://v1.hitokoto.cn?encode=text")
+                    .then(response => response.text())
+                    .then(text => $('.placard').text(text))
+                    .catch(err => console.warn('Failed to load Hitokoto:', err));
+            }
+        }
+        {{- end }}
+
         {{- if not .Site.Params.disablePjax }}
         // 检查 InstantClick 是否成功加载
         if (typeof InstantClick !== 'undefined') {
@@ -85,11 +97,7 @@
                     {{- end }}
                 }
                 {{- if not .Site.Params.placard }}
-                if ($('.placard').length) {
-                    fetch("https://v1.hitokoto.cn?encode=text")
-                        .then(response => response.text())
-                        .then(text => $('.placard').text(text));
-                }
+                loadHitokoto();
                 {{- end }}
             });
             InstantClick.init('mousedown');
@@ -97,9 +105,15 @@
             // InstantClick 加载失败，使用普通模式
             console.warn('InstantClick failed to load, falling back to normal mode');
             $.adamsOverload();
+            {{- if not .Site.Params.placard }}
+            loadHitokoto();
+            {{- end }}
         }
         {{- else }}
         $.adamsOverload();
+        {{- if not .Site.Params.placard }}
+        loadHitokoto();
+        {{- end }}
         {{- end }}
     })(jQuery);
 </script>
@@ -273,10 +287,11 @@
         }
 
         function initArtalkCount() {
-            // Artalk 会自动处理 .artalk-comment-count 元素
+            // Artalk 评论数加载
             Artalk.loadCountWidget({
                 server: '{{ .Site.Params.comments.artalk.server }}',
                 site: '{{ .Site.Params.comments.artalk.site | default .Site.Title }}',
+                countEl: '.artalk-comment-count',  // 指定评论数元素选择器
             });
         }
     }

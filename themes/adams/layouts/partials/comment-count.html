@@ -4,7 +4,7 @@
     {{- if eq $commentSystem "twikoo" -}}
         <span class="twikoo-comment-count" data-path="{{ .RelPermalink }}">0</span>
     {{- else if eq $commentSystem "artalk" -}}
-        <span class="artalk-comment-count" data-page-key="{{ .RelPermalink }}"></span>
+        <span class="artalk-comment-count" data-page-key="{{ .RelPermalink }}" data-page-title="{{ .Title }}">0</span>
     {{- else if eq $commentSystem "gitalk" -}}
         <span class="comment-count" data-path="{{ .RelPermalink }}">0</span>
     {{- else -}}
