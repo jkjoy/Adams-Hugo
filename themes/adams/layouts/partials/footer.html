@@ -203,7 +203,7 @@
             if (typeof twikoo === 'undefined') {
                 // 加载 Twikoo 脚本
                 var script = document.createElement('script');
-                script.src = 'https://cdn.staticfile.org/twikoo/1.6.16/twikoo.all.min.js';
+                script.src = 'https://cdn.staticfile.org/twikoo/1.6.44/twikoo.all.min.js';
                 script.onload = function() {
                     getCommentCounts();
                 };
@@ -278,11 +278,11 @@
         if (typeof Artalk === 'undefined') {
             var linkCSS = document.createElement('link');
             linkCSS.rel = 'stylesheet';
-            linkCSS.href = 'https://cdn.staticfile.org/artalk/2.5.5/Artalk.css';
+            linkCSS.href = '{{ .Site.Params.comments.artalk.server }}/dist/Artalk.css';
             document.head.appendChild(linkCSS);
 
             var script = document.createElement('script');
-            script.src = 'https://cdn.staticfile.org/artalk/2.5.5/Artalk.js';
+            script.src = '{{ .Site.Params.comments.artalk.server }}/dist/Artalk.js';
             script.onload = function() {
                 initArtalkCount();
             };
