@@ -1,4 +1,4 @@
-baseURL = "https://blog.0tz.top/Adams-Hugo/"
+baseURL = "https://blog.0tz.top"
 languageCode = "zh-CN"
 title = "Adams"
 theme = "adams"
@@ -132,13 +132,13 @@ theme = "adams"
   name = "RSS"
   url = "/index.xml"
   weight = 1
-  pre = "czs-rss"
+  pre = ""
 
 [[menu.footer]]
   name = "Mail"
   url = "mailto:s@zxd.im"
   weight = 1
-  pre = "czs-message"
+  pre = ""
 
 # Markup 设置
 [markup]
