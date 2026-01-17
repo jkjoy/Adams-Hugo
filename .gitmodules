@@ -1,0 +1,3 @@
+[submodule "themes/adams"]
+	path = themes/adams
+	url = https://github.com/jkjoy/hugo-theme-adams.git
