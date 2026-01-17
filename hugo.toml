@@ -62,8 +62,8 @@ theme = "adams"
 
     # Gitalk 配置
     [params.comments.gitalk]
-      clientID = "Iv23lig7EK2v2M24CMZj"        # GitHub Application Client ID
-      clientSecret = "ba57952d5c02e91284913252d29afec9574eea0e" # GitHub Application Client Secret
+      clientID = "117dc9f07efe4e60ddb2"        # GitHub Application Client ID
+      clientSecret = "cb57a1ce035ba6b36094be74d817bafb4f2400df" # GitHub Application Client Secret
       repo = "Adams-Hugo"                         # 存储评论的仓库名
       owner = "jkjoy"             # 仓库所有者
       admin = ["jkjoy"]           # 管理员用户名数组
