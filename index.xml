@@ -1,18 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Adams</title><link>https://blog.0tz.top/Adams-Hugo/</link><description>Recent content on Adams</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 15 Jan 2024 10:30:00 +0800</lastBuildDate><atom:link href="https://blog.0tz.top/Adams-Hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo 博客搭建完全指南</title><link>https://blog.0tz.top/Adams-Hugo/posts/hugo-guide/</link><pubDate>Mon, 15 Jan 2024 10:30:00 +0800</pubDate><guid>https://blog.0tz.top/Adams-Hugo/posts/hugo-guide/</guid><description>&lt;p&gt;Hugo 是世界上最快的静态网站生成器之一，本文将带你了解如何快速搭建一个 Hugo 博客。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Adams</title><link>https://blog.0tz.top/</link><description>Recent content on Adams</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 15 Jan 2024 10:30:00 +0800</lastBuildDate><atom:link href="https://blog.0tz.top/index.xml" rel="self" type="application/rss+xml"/><item><title>Hugo 博客搭建完全指南</title><link>https://blog.0tz.top/posts/hugo-guide/</link><pubDate>Mon, 15 Jan 2024 10:30:00 +0800</pubDate><guid>https://blog.0tz.top/posts/hugo-guide/</guid><description>&lt;p&gt;Hugo 是世界上最快的静态网站生成器之一，本文将带你了解如何快速搭建一个 Hugo 博客。&lt;/p&gt;
 &lt;h2 id="为什么选择-hugo"&gt;为什么选择 Hugo&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;极快的构建速度&lt;/strong&gt; - 毫秒级生成网站&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;简单易用&lt;/strong&gt; - 无需数据库，纯静态&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;主题丰富&lt;/strong&gt; - 社区提供大量精美主题&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;部署方便&lt;/strong&gt; - 支持 GitHub Pages、Netlify 等&lt;/li&gt;
-&lt;/ol&gt;</description></item><item><title>Markdown 语法速查表</title><link>https://blog.0tz.top/Adams-Hugo/posts/markdown-cheatsheet/</link><pubDate>Fri, 12 Jan 2024 14:20:00 +0800</pubDate><guid>https://blog.0tz.top/Adams-Hugo/posts/markdown-cheatsheet/</guid><description>&lt;p&gt;Markdown 是一种轻量级标记语言，让你可以使用纯文本编辑器编写格式化的文档。&lt;/p&gt;
+&lt;/ol&gt;</description></item><item><title>Markdown 语法速查表</title><link>https://blog.0tz.top/posts/markdown-cheatsheet/</link><pubDate>Fri, 12 Jan 2024 14:20:00 +0800</pubDate><guid>https://blog.0tz.top/posts/markdown-cheatsheet/</guid><description>&lt;p&gt;Markdown 是一种轻量级标记语言，让你可以使用纯文本编辑器编写格式化的文档。&lt;/p&gt;
 &lt;h2 id="标题"&gt;标题&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-markdown" data-lang="markdown"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gh"&gt;# 一级标题
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gu"&gt;## 二级标题
 &lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="gu"&gt;### 三级标题
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>评论测试文章</title><link>https://blog.0tz.top/Adams-Hugo/posts/comment-test/</link><pubDate>Wed, 10 Jan 2024 20:00:00 +0800</pubDate><guid>https://blog.0tz.top/Adams-Hugo/posts/comment-test/</guid><description>&lt;p&gt;这是一篇用于测试评论功能的文章。&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>评论测试文章</title><link>https://blog.0tz.top/posts/comment-test/</link><pubDate>Wed, 10 Jan 2024 20:00:00 +0800</pubDate><guid>https://blog.0tz.top/posts/comment-test/</guid><description>&lt;p&gt;这是一篇用于测试评论功能的文章。&lt;/p&gt;
 &lt;h2 id="测试目的"&gt;测试目的&lt;/h2&gt;
-&lt;p&gt;验证评论系统是否在正确的位置显示。&lt;/p&gt;</description></item><item><title>关于</title><link>https://blog.0tz.top/Adams-Hugo/pages/about/</link><pubDate>Wed, 10 Jan 2024 00:00:00 +0000</pubDate><guid>https://blog.0tz.top/Adams-Hugo/pages/about/</guid><description>&lt;h2 id="关于本站"&gt;关于本站&lt;/h2&gt;
+&lt;p&gt;验证评论系统是否在正确的位置显示。&lt;/p&gt;</description></item><item><title>关于</title><link>https://blog.0tz.top/pages/about/</link><pubDate>Wed, 10 Jan 2024 00:00:00 +0000</pubDate><guid>https://blog.0tz.top/pages/about/</guid><description>&lt;h2 id="关于本站"&gt;关于本站&lt;/h2&gt;
 &lt;p&gt;这是使用 Hugo + Adams 主题搭建的个人博客。&lt;/p&gt;
 &lt;h2 id="关于我"&gt;关于我&lt;/h2&gt;
 &lt;p&gt;在这里介绍你自己&amp;hellip;&lt;/p&gt;
@@ -20,7 +20,7 @@
 &lt;ul&gt;
 &lt;li&gt;Email: &lt;a href="mailto:your@email.com"&gt;your@email.com&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;GitHub: &lt;a href="https://github.com/jkjoy"&gt;https://github.com/jkjoy&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>分类标签</title><link>https://blog.0tz.top/Adams-Hugo/tags/</link><pubDate>Wed, 10 Jan 2024 00:00:00 +0000</pubDate><guid>https://blog.0tz.top/Adams-Hugo/tags/</guid><description/></item><item><title>友情链接</title><link>https://blog.0tz.top/Adams-Hugo/links/</link><pubDate>Wed, 10 Jan 2024 00:00:00 +0000</pubDate><guid>https://blog.0tz.top/Adams-Hugo/links/</guid><description>&lt;p&gt;欢迎交换友链！请在下方留言或发送邮件。&lt;/p&gt;
+&lt;/ul&gt;</description></item><item><title>分类标签</title><link>https://blog.0tz.top/tags/</link><pubDate>Wed, 10 Jan 2024 00:00:00 +0000</pubDate><guid>https://blog.0tz.top/tags/</guid><description/></item><item><title>友情链接</title><link>https://blog.0tz.top/links/</link><pubDate>Wed, 10 Jan 2024 00:00:00 +0000</pubDate><guid>https://blog.0tz.top/links/</guid><description>&lt;p&gt;欢迎交换友链！请在下方留言或发送邮件。&lt;/p&gt;
 &lt;h2 id="友链要求"&gt;友链要求&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;内容积极向上&lt;/li&gt;
@@ -32,7 +32,7 @@
 &lt;li&gt;名称：{{ .Site.Title }}&lt;/li&gt;
 &lt;li&gt;地址：{{ .Site.BaseURL }}&lt;/li&gt;
 &lt;li&gt;描述：{{ .Site.Params.description }}&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>文章归档</title><link>https://blog.0tz.top/Adams-Hugo/archives/</link><pubDate>Wed, 10 Jan 2024 00:00:00 +0000</pubDate><guid>https://blog.0tz.top/Adams-Hugo/archives/</guid><description>&lt;p&gt;这里是所有文章的归档列表，按年份和时间倒序排列。&lt;/p&gt;</description></item><item><title>欢迎使用 Adams 主题</title><link>https://blog.0tz.top/Adams-Hugo/posts/welcome/</link><pubDate>Wed, 10 Jan 2024 00:00:00 +0000</pubDate><guid>https://blog.0tz.top/Adams-Hugo/posts/welcome/</guid><description>&lt;p&gt;欢迎使用 Adams Hugo 主题！这是一个从 WordPress Adams 主题完整移植的 Hugo 主题。&lt;/p&gt;
+&lt;/ul&gt;</description></item><item><title>文章归档</title><link>https://blog.0tz.top/archives/</link><pubDate>Wed, 10 Jan 2024 00:00:00 +0000</pubDate><guid>https://blog.0tz.top/archives/</guid><description>&lt;p&gt;这里是所有文章的归档列表，按年份和时间倒序排列。&lt;/p&gt;</description></item><item><title>欢迎使用 Adams 主题</title><link>https://blog.0tz.top/posts/welcome/</link><pubDate>Wed, 10 Jan 2024 00:00:00 +0000</pubDate><guid>https://blog.0tz.top/posts/welcome/</guid><description>&lt;p&gt;欢迎使用 Adams Hugo 主题！这是一个从 WordPress Adams 主题完整移植的 Hugo 主题。&lt;/p&gt;
 &lt;h2 id="主要特性"&gt;主要特性&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;简洁优雅的设计风格&lt;/li&gt;
@@ -40,7 +40,7 @@
 &lt;li&gt;响应式布局&lt;/li&gt;
 &lt;li&gt;代码高亮&lt;/li&gt;
 &lt;li&gt;三种评论系统可选&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>前端开发常用工具推荐</title><link>https://blog.0tz.top/Adams-Hugo/posts/frontend-tools/</link><pubDate>Mon, 08 Jan 2024 16:45:00 +0800</pubDate><guid>https://blog.0tz.top/Adams-Hugo/posts/frontend-tools/</guid><description>&lt;p&gt;作为前端开发者，选择合适的工具可以大大提高开发效率。这里推荐一些我常用的工具。&lt;/p&gt;
+&lt;/ul&gt;</description></item><item><title>前端开发常用工具推荐</title><link>https://blog.0tz.top/posts/frontend-tools/</link><pubDate>Mon, 08 Jan 2024 16:45:00 +0800</pubDate><guid>https://blog.0tz.top/posts/frontend-tools/</guid><description>&lt;p&gt;作为前端开发者，选择合适的工具可以大大提高开发效率。这里推荐一些我常用的工具。&lt;/p&gt;
 &lt;h2 id="编辑器"&gt;编辑器&lt;/h2&gt;
 &lt;h3 id="vs-code"&gt;VS Code&lt;/h3&gt;
 &lt;p&gt;微软出品的免费编辑器，插件生态丰富，性能优秀。&lt;/p&gt;
@@ -50,7 +50,7 @@
 &lt;li&gt;Prettier - 代码格式化&lt;/li&gt;
 &lt;li&gt;Auto Rename Tag - 自动重命名标签&lt;/li&gt;
 &lt;li&gt;Live Server - 本地开发服务器&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>我的 2023 年度总结</title><link>https://blog.0tz.top/Adams-Hugo/posts/2023-summary/</link><pubDate>Sun, 31 Dec 2023 23:00:00 +0800</pubDate><guid>https://blog.0tz.top/Adams-Hugo/posts/2023-summary/</guid><description>&lt;p&gt;2023 年即将结束，回顾这一年的成长与收获。&lt;/p&gt;
+&lt;/ul&gt;</description></item><item><title>我的 2023 年度总结</title><link>https://blog.0tz.top/posts/2023-summary/</link><pubDate>Sun, 31 Dec 2023 23:00:00 +0800</pubDate><guid>https://blog.0tz.top/posts/2023-summary/</guid><description>&lt;p&gt;2023 年即将结束，回顾这一年的成长与收获。&lt;/p&gt;
 &lt;h2 id="技术成长"&gt;技术成长&lt;/h2&gt;
 &lt;p&gt;今年学习了很多新技术：&lt;/p&gt;
 &lt;ul&gt;
@@ -58,12 +58,12 @@
 &lt;li&gt;尝试了 Rust 语言&lt;/li&gt;
 &lt;li&gt;搭建了自己的博客系统&lt;/li&gt;
 &lt;li&gt;参与了多个开源项目&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>JavaScript ES6+ 新特性概览</title><link>https://blog.0tz.top/Adams-Hugo/posts/es6-features/</link><pubDate>Thu, 28 Dec 2023 11:30:00 +0800</pubDate><guid>https://blog.0tz.top/Adams-Hugo/posts/es6-features/</guid><description>&lt;p&gt;ECMAScript 6（ES6）及后续版本为 JavaScript 带来了许多强大的新特性。&lt;/p&gt;
+&lt;/ul&gt;</description></item><item><title>JavaScript ES6+ 新特性概览</title><link>https://blog.0tz.top/posts/es6-features/</link><pubDate>Thu, 28 Dec 2023 11:30:00 +0800</pubDate><guid>https://blog.0tz.top/posts/es6-features/</guid><description>&lt;p&gt;ECMAScript 6（ES6）及后续版本为 JavaScript 带来了许多强大的新特性。&lt;/p&gt;
 &lt;h2 id="let-和-const"&gt;let 和 const&lt;/h2&gt;
 &lt;p&gt;块级作用域变量声明：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kd"&gt;let&lt;/span&gt; &lt;span class="nx"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;PI&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mf"&gt;3.14159&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>如何提高代码可读性</title><link>https://blog.0tz.top/Adams-Hugo/posts/code-readability/</link><pubDate>Wed, 20 Dec 2023 09:15:00 +0800</pubDate><guid>https://blog.0tz.top/Adams-Hugo/posts/code-readability/</guid><description>&lt;p&gt;可读性是衡量代码质量的重要标准之一。好的代码应该易于理解和维护。&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>如何提高代码可读性</title><link>https://blog.0tz.top/posts/code-readability/</link><pubDate>Wed, 20 Dec 2023 09:15:00 +0800</pubDate><guid>https://blog.0tz.top/posts/code-readability/</guid><description>&lt;p&gt;可读性是衡量代码质量的重要标准之一。好的代码应该易于理解和维护。&lt;/p&gt;
 &lt;h2 id="命名规范"&gt;命名规范&lt;/h2&gt;
 &lt;h3 id="使用有意义的变量名"&gt;使用有意义的变量名&lt;/h3&gt;
 &lt;p&gt;❌ 不好：&lt;/p&gt;
@@ -72,7 +72,7 @@
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;✅ 好：&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-javascript" data-lang="javascript"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;currentDate&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="k"&gt;new&lt;/span&gt; &lt;span class="nb"&gt;Date&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="kr"&gt;const&lt;/span&gt; &lt;span class="nx"&gt;activeUsers&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;users&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;filter&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;user&lt;/span&gt; &lt;span class="p"&gt;=&amp;gt;&lt;/span&gt; &lt;span class="nx"&gt;user&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;isActive&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Git 常用命令速查</title><link>https://blog.0tz.top/Adams-Hugo/posts/git-commands/</link><pubDate>Wed, 15 Nov 2023 14:30:00 +0800</pubDate><guid>https://blog.0tz.top/Adams-Hugo/posts/git-commands/</guid><description>&lt;p&gt;Git 是最流行的版本控制系统，这里整理了常用的 Git 命令。&lt;/p&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Git 常用命令速查</title><link>https://blog.0tz.top/posts/git-commands/</link><pubDate>Wed, 15 Nov 2023 14:30:00 +0800</pubDate><guid>https://blog.0tz.top/posts/git-commands/</guid><description>&lt;p&gt;Git 是最流行的版本控制系统，这里整理了常用的 Git 命令。&lt;/p&gt;
 &lt;h2 id="配置"&gt;配置&lt;/h2&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-bash" data-lang="bash"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="c1"&gt;# 设置用户名和邮箱&lt;/span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;git config --global user.name &lt;span class="s2"&gt;&amp;#34;Your Name&amp;#34;&lt;/span&gt;
