@@ -42,7 +42,7 @@ theme = "adams"
   # 评论系统配置
   [params.comments]
     # 选择评论系统: twikoo, artalk, gitalk 或留空不使用
-    system = "twikoo"
+    system = "gitalk"
 
     # Twikoo 配置
     [params.comments.twikoo]
@@ -62,11 +62,11 @@ theme = "adams"
 
     # Gitalk 配置
     [params.comments.gitalk]
-      clientID = "your-github-client-id"        # GitHub Application Client ID
-      clientSecret = "your-github-client-secret" # GitHub Application Client Secret
-      repo = "your-repo"                         # 存储评论的仓库名
-      owner = "your-github-username"             # 仓库所有者
-      admin = ["your-github-username"]           # 管理员用户名数组
+      clientID = "Iv23lig7EK2v2M24CMZj"        # GitHub Application Client ID
+      clientSecret = "ba57952d5c02e91284913252d29afec9574eea0e" # GitHub Application Client Secret
+      repo = "Adams-Hugo"                         # 存储评论的仓库名
+      owner = "jkjoy"             # 仓库所有者
+      admin = ["jkjoy"]           # 管理员用户名数组
       distractionFreeMode = false                # 无干扰模式
       proxy = ""                                 # GitHub 登录代理
       language = "zh-CN"                         # 语言
