@@ -33,8 +33,8 @@ theme = "adams"
   icp = ""
 
   # 打赏二维码
-  wechatpay = ""  # 微信打赏二维码URL
-  alipay = ""     # 支付宝打赏二维码URL
+  wechatpay = "/images/wx.png"  # 微信打赏二维码URL
+  alipay = "/images/ali.png"     # 支付宝打赏二维码URL
 
   # 文章底部广告HTML
   postAd = ""
